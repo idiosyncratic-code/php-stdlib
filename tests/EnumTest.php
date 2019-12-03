@@ -39,7 +39,7 @@ class EnumTest extends TestCase
 
     public function testInvalidMagicFactory() :void
     {
-        $this->expectException(ErrorException::class);
+        $this->expectException(DomainException::class);
 
         Stub\Fruit::CARROT();
     }

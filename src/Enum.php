@@ -93,20 +93,7 @@ abstract class Enum implements JsonSerializable
             return static::create($values[$key]);
         }
 
-        $trace = debug_backtrace();
-
-        throw new ErrorException(
-            sprintf(
-                'Call to undefined method %s%s%s()',
-                $trace[0]['class'],
-                $trace[0]['type'],
-                $name
-            ),
-            0,
-            E_ERROR,
-            $trace[0]['file'],
-            $trace[0]['line']
-        );
+        throw new DomainException(sprintf('%s is not a valid %s value', $name, static::class));
     }
 
     /**
