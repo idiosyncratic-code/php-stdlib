@@ -56,7 +56,7 @@ abstract class Enum implements JsonSerializable
         return spl_object_hash($otherEnum) === spl_object_hash($this);
     }
 
-    final public function __toString() : string
+    public function __toString() : string
     {
         return (string) $this->value();
     }
