@@ -70,14 +70,6 @@ abstract class Enum implements JsonSerializable
     }
 
     /**
-     * @param mixed $value
-     */
-    final private function __construct($value)
-    {
-        $this->value = $value;
-    }
-
-    /**
      * @return array<string, mixed>
      */
     final public static function values() : array
@@ -115,5 +107,13 @@ abstract class Enum implements JsonSerializable
             $trace[0]['file'],
             $trace[0]['line']
         );
+    }
+
+    /**
+     * @param mixed $value
+     */
+    final private function __construct($value)
+    {
+        $this->value = $value;
     }
 }
